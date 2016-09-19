@@ -17,7 +17,13 @@ public class Searcher implements ISearcher {
 
     public String[] guess(String start) {
         ArrayList<String> result = new ArrayList<>(MAX_RESULT_LENGTH);
-
+        int count = 0;
+        for (NameData nameData : nameDatas) {
+            if (nameData.getName().startsWith(start)){
+                result.add(nameData.getName() + " " + nameData.getDate());
+                if (++count >= MAX_RESULT_LENGTH) break;
+            }
+        }
         return result.toArray(new String[result.size()]);
     }
 
