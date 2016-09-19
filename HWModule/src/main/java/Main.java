@@ -23,6 +23,7 @@ public class Main {
         int testCount = 10;
         for (int k = 0; k < testCount; k++) {
             String start = UUID.randomUUID().toString().replace("-", "").substring(0, 4);//1 + new Random().nextInt(4));
+            System.out.println("- " + start);
             time = System.currentTimeMillis();
             final String[] guess = searcher.guess(start);
             final long time2 = System.currentTimeMillis() - time;
